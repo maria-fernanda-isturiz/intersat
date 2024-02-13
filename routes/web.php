@@ -4,6 +4,10 @@ use App\Http\Controllers\ServicesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipmentsController;
 use App\Http\Controllers\TechniciansController;
+use App\Http\Controllers\TestViewController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +21,7 @@ use App\Http\Controllers\TechniciansController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::get('/active_services', [ServicesController::class, 'GetServices'])->name('active_services');
@@ -37,6 +41,12 @@ Route::get('/add_technicians', [TechniciansController::class, 'TechnicianForm'])
 Route::post('/save_technicians', [TechniciansController::class, 'AddTechnician'])->name('new_technicians');
 Route::put('/change_technicians/{id}', [TechniciansController::class, 'UpdateTechnician'])->name('edit_technicians');
 Route::delete('/delete_technicians/{id}', [TechniciansController::class, 'DeleteTechnician'])->name('delete_technician');
+
+
+Route::get('/clients', [TestViewController::class, 'clientAdminView']);
+Route::get('/services', [TestViewController::class, 'servicesAdminView']);
+Route::get('/technician', [TestViewController::class, 'techniciansAdminView']);
+
 
 
 
