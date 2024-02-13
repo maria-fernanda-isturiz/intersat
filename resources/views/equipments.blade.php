@@ -126,6 +126,6 @@
           @endforeach
         </tbody>
       </table>
-    
-  </div>
-  @endsection
+    </div>
+  </body>
+</html>

@@ -1,13 +1,17 @@
-@extends('main')
-    @section('contenido-dinamico')
-    <div class="card mt-4 mx-4">
-      <div class="d-flex justify-content-between">
-          <h4 class="card-header">Listado de Técnicos</h4>
-          <div class="mt-3 pt-3 px-4">
-              <a href="{{url('')}}"><i class="bx bxs-book-add"></i> Agregar</a>
-          </div>
-      </div>
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tecnicos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <h1 class="mt-3 text-center">Nuestros Tecnicos</h1>
+    <div class="col text-center mb-3">
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalAddTechnician">Agregar nuevo tecnico</button>
+    </div>
     <table class="table table-hover">
         <thead>
           <tr>
@@ -33,6 +37,50 @@
               <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ModalDeleteEquipment{{$technician->id}}"><i class='bx bxs-eraser'></i></button>
             </td>
           </tr>
+
+          <div class="modal" id="ModalAddTechnician" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Agregar Tecnico Nuevo</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="{{route('new_technicians')}}" method="post" enctype="multipart/form-data">
+                  @csrf
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label for="" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="name" id="" placeholder="Ingrese el nombre del tecnico">
+                  </div>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Apellido</label>
+                      <input type="text" class="form-control" name="lastname" id="" placeholder="Ingrese el apellido del tecnico">
+                  </div>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Direccion</label>
+                      <input type="text" class="form-control" name="address" id="" placeholder="Ingrese la direccion del tecnico">
+                  </div>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Telefono</label>
+                      <input type="number" class="form-control" name="phone" id="" placeholder="Ingrese el telefono del tecnico">
+                  </div>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Correo</label>
+                      <input type="email" class="form-control" name="email" id="" placeholder="Ingrese el correo del tecnico">
+                  </div>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Contraseña</label>
+                      <input type="password" class="form-control" name="password" id="" placeholder="Ingrese el telefono del tecnico">
+                  </div>                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <input type="submit" class="btn btn-success" value="Agregar Tecnico Nuevo">
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
 
           <div class="modal" id="ModalTechnician{{$technician->id}}" tabindex="-1">
             <div class="modal-dialog">

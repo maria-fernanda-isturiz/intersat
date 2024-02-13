@@ -5,8 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipmentsController;
 use App\Http\Controllers\TechniciansController;
 use App\Http\Controllers\TestViewController;
-use App\Http\Controller\AuthorizationController;
-
+use App\Http\Controllers\AuthorizationController;
 
 
 
@@ -26,7 +25,7 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/sing_in', [AuthorizationController::class, 'singIn'])->name('sing-in');
+Route::get('/sign_in', [AuthorizationController::class, 'signIn'])->name('sign-in');
 
 Route::get('/active_services', [ServicesController::class, 'GetServices'])->name('active_services');
 Route::get('/add_services', [ServicesController::class, 'ServicesForm'])->name('register_services');
@@ -45,7 +44,6 @@ Route::get('/add_technicians', [TechniciansController::class, 'TechnicianForm'])
 Route::post('/save_technicians', [TechniciansController::class, 'AddTechnician'])->name('new_technicians');
 Route::put('/change_technicians/{id}', [TechniciansController::class, 'UpdateTechnician'])->name('edit_technicians');
 Route::delete('/delete_technicians/{id}', [TechniciansController::class, 'DeleteTechnician'])->name('delete_technician');
-
 
 Route::get('/admin', [TestViewController::class, 'adminMenuView']);
 Route::get('/clients', [TestViewController::class, 'clientAdminView']);
