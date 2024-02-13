@@ -10,11 +10,7 @@
     <h1 class="mt-3 text-center">Nuestros equipos disponibles</h1>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <div class="col text-center mb-3">
-<<<<<<< Updated upstream
       <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalAddEquipment">Agregar equipos nuevos</button>
-=======
-      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalAddEquipment">Agregar Equipo Nuevo</button>
->>>>>>> Stashed changes
     </div>
     <table class="table table-hover">
         <thead>
@@ -56,11 +52,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="" class="form-label">Descripción del equipo y sus características:</label>
-<<<<<<< Updated upstream
                     <textarea class="form-control" id="" name="description" rows="3" placeholder="Ingrese una descripción nueva del equipo a actualizar" value=""></textarea>
-=======
-                    <textarea class="form-control" id="" name="description" rows="3" placeholder="Ingrese una descripción del equipo a agregar" value=""></textarea>
->>>>>>> Stashed changes
                   </div>                  
                 </div>
                 <div class="modal-footer">
