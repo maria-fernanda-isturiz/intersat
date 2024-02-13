@@ -14,7 +14,7 @@
 <body class="text-center">
     
   <main class="form-signin">
-    <form id="formAuthentication" action="{{ route('sing-in') }}" method="POST">
+    <form id="formAuthentication" action="{{ route('sign-in') }}" method="POST">
       @method('GET')
       <div class="d-flex justify-content-center">
         <img class="mb-5 float-center" src="{{url('/')}}/assets/img/logos/logo_intersat.png" alt="logo_intersat" width ="500"  >

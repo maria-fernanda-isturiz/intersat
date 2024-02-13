@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Equipments;
 use App\Models\EquipmentStatus;
+use Illuminate\Support\Facades\DB;
 
 
 class EquipmentsController extends Controller
 {
     public function GetEquipments(){
-        $equipments = \DB::table('equipments')->join('equipment_status', 'equipments.id_equipment_status', '=', 'equipment_status.id')->select('equipments.id', 'equipments.name', 'equipments.description', '.equipment_status.status')->where('equipment_status.id', '=', 1)->get();
-        $equipment_status = \DB::table('equipment_status')->select('equipment_status.status', 'equipment_status.id')->where('equipment_status.id', '=', 1)->orWhere('equipment_status.id', '=', 3)->get();
+        $equipments = DB::table('equipments')->join('equipment_status', 'equipments.id_equipment_status', '=', 'equipment_status.id')->select('equipments.id', 'equipments.name', 'equipments.description', 'equipment_status.status')->where('equipment_status.id', '=', 1)->get();
+        $equipment_status = DB::table('equipment_status')->select('equipment_status.status', 'equipment_status.id')->where('equipment_status.id', '=', 1)->orWhere('equipment_status.id', '=', 3)->get();
 
         return view('equipments', compact('equipments', 'equipment_status'));
     }
