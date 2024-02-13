@@ -10,7 +10,7 @@
 <body>
     <h1 class="mt-3 text-center">Nuestros Tecnicos</h1>
     <div class="col text-center mb-3">
-      <a href="{{route('register_technicians')}}" class="btn btn-success">Agregar nuevo tecnico</a>
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalAddTechnician">Agregar nuevo tecnico</button>
     </div>
     <table class="table table-hover">
         <thead>
@@ -36,6 +36,50 @@
               <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ModalDeleteTechnician{{$technician->id}}">Eliminar</button>
             </td>
           </tr>
+
+          <div class="modal" id="ModalAddTechnician" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Agregar Tecnico Nuevo</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="{{route('new_technicians')}}" method="post" enctype="multipart/form-data">
+                  @csrf
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label for="" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="name" id="" placeholder="Ingrese el nombre del tecnico">
+                  </div>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Apellido</label>
+                      <input type="text" class="form-control" name="lastname" id="" placeholder="Ingrese el apellido del tecnico">
+                  </div>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Direccion</label>
+                      <input type="text" class="form-control" name="address" id="" placeholder="Ingrese la direccion del tecnico">
+                  </div>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Telefono</label>
+                      <input type="number" class="form-control" name="phone" id="" placeholder="Ingrese el telefono del tecnico">
+                  </div>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Correo</label>
+                      <input type="email" class="form-control" name="email" id="" placeholder="Ingrese el correo del tecnico">
+                  </div>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Contraseña</label>
+                      <input type="password" class="form-control" name="password" id="" placeholder="Ingrese el telefono del tecnico">
+                  </div>                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <input type="submit" class="btn btn-success" value="Agregar Tecnico Nuevo">
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
 
           <div class="modal" id="ModalTechnician{{$technician->id}}" tabindex="-1">
             <div class="modal-dialog">
