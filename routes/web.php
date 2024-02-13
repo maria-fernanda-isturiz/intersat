@@ -4,6 +4,10 @@ use App\Http\Controllers\ServicesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipmentsController;
 use App\Http\Controllers\TechniciansController;
+use App\Http\Controllers\TestViewController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,20 +43,8 @@ Route::put('/change_technicians/{id}', [TechniciansController::class, 'UpdateTec
 Route::delete('/delete_technicians/{id}', [TechniciansController::class, 'DeleteTechnician'])->name('delete_technician');
 
 
-
-/*Ruteo para Clientes*/
-
-/* Ruteo para Técnicos*/
-
-/* Ruteo para Servicios*/
-
-/* Ruteo para archivos PDF*/
-
-/* Ruteo para vistas generales*/
 Route::get('/clients', [TestViewController::class, 'clientAdminView']);
-
 Route::get('/services', [TestViewController::class, 'servicesAdminView']);
-
 Route::get('/technician', [TestViewController::class, 'techniciansAdminView']);
 
 

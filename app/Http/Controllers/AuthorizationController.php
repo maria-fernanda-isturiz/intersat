@@ -13,17 +13,9 @@ class AuthorizationController extends Controller
 
         $adminUser = Users::select('name')->where('email', '=', $email)
         ->where('password', '=', $password)->get();
-
-        foreach($adminUser as $admin){
-
-            session(['id_admin' => $admin->id]);
-            return view('admin');
-        }
-
+       
         return "Credenciales Inválidas";
     }
 
-    public function cerrarSesion(){
-        
-    }
+    
 }
