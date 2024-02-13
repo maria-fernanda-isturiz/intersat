@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipmentsController;
+use App\Http\Controllers\TechniciansController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,12 @@ Route::get('/add_equipments', [EquipmentsController::class, 'EquipmentForm'])->n
 Route::post('/save_equipments', [EquipmentsController::class, 'RegistrarEquipoNuevo'])->name('new_equipments');
 Route::put('/change_equipments/{id}', [EquipmentsController::class, 'ActualizarEquipo'])->name('edit_equipments');
 Route::put('/delete_equipments/{id}', [EquipmentsController::class, 'EliminarEquipo'])->name('delete_equipment');
+
+Route::get('/technicians', [TechniciansController::class, 'GetTechnicians'])->name('technicians');
+Route::get('/add_technicians', [TechniciansController::class, 'TechnicianForm'])->name('register_technicians');
+Route::post('/save_technicians', [TechniciansController::class, 'AddTechnician'])->name('new_technicians');
+Route::put('/change_technicians/{id}', [TechniciansController::class, 'UpdateTechnician'])->name('edit_technicians');
+Route::delete('/delete_technicians/{id}', [TechniciansController::class, 'DeleteTechnician'])->name('delete_technician');
 
 
 
