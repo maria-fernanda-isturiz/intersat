@@ -33,7 +33,7 @@
             
 
         <li class="menu-item">
-            <a href="{{url('/services')}}" class="menu-link">
+            <a href="{{url('/active_services')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-book-content"></i>
                 <div data-i18n="Dashboards">Servicios</div>
             </a>

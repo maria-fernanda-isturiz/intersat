@@ -15,7 +15,7 @@ class TestViewController extends Controller
     }
 
     public function servicesAdminView(){
-        return view('service');
+        return view('services');
     }
 
     public function techniciansAdminView(){
