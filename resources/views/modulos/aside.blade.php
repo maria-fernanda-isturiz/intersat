@@ -25,7 +25,7 @@
         <!-- Pages -->
         <!-- Layouts -->
         <li class="menu-item">
-            <a href="{{url('/client')}}" class="menu-link">
+            <a href="{{url('/clients')}}" class="menu-link">
             <i class="menu-icon tf-icons bx bx-user-circle"></i>
             <div data-i18n="Layouts">Clientes</div>
             </a>
@@ -40,7 +40,7 @@
         </li>
 
         <li class="menu-item">
-            <a href="{{url('/technician')}}" class="menu-link">
+            <a href="{{url('/technicians')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-user"></i>
                 <div data-i18n="Dashboards">Técnicos</div>
             </a>
