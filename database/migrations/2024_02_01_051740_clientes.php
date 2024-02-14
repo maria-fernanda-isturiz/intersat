@@ -19,8 +19,6 @@ return new class extends Migration
             $table->integer('phone');
             $table->string('email', 30);
             $table->string('password', 30);
-            $table->unsignedBigInteger('id_client_status');
-            $table->foreign('id_client_status')->references('id')->on('client_status');
             $table->timestamps();
         });
     }

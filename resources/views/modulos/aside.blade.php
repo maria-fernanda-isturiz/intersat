@@ -25,7 +25,7 @@
         <!-- Pages -->
         <!-- Layouts -->
         <li class="menu-item">
-            <a href="{{url('/clients')}}" class="menu-link">
+            <a href="{{url('/client')}}" class="menu-link">
             <i class="menu-icon tf-icons bx bx-user-circle"></i>
             <div data-i18n="Layouts">Clientes</div>
             </a>

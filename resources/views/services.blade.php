@@ -37,7 +37,7 @@
               <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ModalDeleteServices{{$service->id}}">Eliminar</button>
             </td>
           </tr>
-
+ 
           <div class="modal" id="ModalServices{{$service->id}}" tabindex="-1">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -62,7 +62,7 @@
                   <div class="mb-3">
                     <label for="" class="form-label">Descripción del servicio y sus características:</label>
                     <textarea class="form-control" id="" name="description" rows="3" placeholder="Ingrese una descripción nueva del servicio a actualizar" value="{{$service->description}}"></textarea>
-                  </div>                  
+                  </div>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -72,7 +72,7 @@
               </div>
             </div>
           </div>
-
+ 
           <div class="modal" id="ModalDeleteServices{{$service->id}}" tabindex="-1">
             <div class="modal-dialog">
               <div class="modal-content">
